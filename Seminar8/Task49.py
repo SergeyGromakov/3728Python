@@ -3,8 +3,8 @@
 # 3. Посмотреть все контакты +
 # 4. Создать контакт +
 # 5. Найти контакт +
-# 6. Изменить контакт 
-# 7. Удалить контакт
+# 6. Изменить контакт + 
+# 7. Удалить контакт 
 # 8. Выход
 
 # def add_cont():
@@ -40,26 +40,46 @@
 #     if num == 0:
 #         print('Такого абонента нет в списке')
 
-def change_cont():
-    phone_book = []
-    file = open('файл.txt', 'r', encoding='UTF-8')
-    data = file.readlines()
-    file.close()
-    i = 1
-    for contact in data:
-        new_contact = contact.strip().split(';')
-        new_contact = {'id':i,
-        'name':new_contact[0],
-        'phone':new_contact[1],
-        'comment':new_contact[2]}
-        print(''.join(f'{e:<20}' for e in list(new_contact.values())))
-        phone_book.append(new_contact)
-        i+=1
-    num_of_abonent = int(input('Введите порядковый номер абонента, который хотите изменить: '))
-    num_of_change = int(input('Выберите, что вы хотите изменить: \n1. Имя, \n2. Номер телшефона, \n3. Место работы\n'))
-    if num_of_change == 1:
-        num_dict = phone_book[num_of_abonent-1]
-        num_dict['name'] = input('Введите правильные Фамилию и Имя: ')
-        phone_book[num_of_abonent-1] = num_dict
+# def change_cont():
+#     phone_book = []
+#     file = open('файл.txt', 'r', encoding='UTF-8')
+#     data = file.readlines()
+#     file.close()
+#     i = 1
+#     for contact in data:
+#         new_contact = contact.strip().split(';')
+#         new_contact = {'id':i,
+#         'name':new_contact[0],
+#         'phone':new_contact[1],
+#         'comment':new_contact[2]}
+#         print(''.join(f'{e:<20}' for e in list(new_contact.values())))
+#         phone_book.append(new_contact)
+#         i+=1
+#     num_of_abonent = int(input('Введите порядковый номер абонента, который хотите изменить: '))
+#     num_of_change = int(input('Выберите, что вы хотите изменить: \n1. Имя, \n2. Номер телшефона, \n3. Место работы\n'))
+#     if num_of_change == 1:
+#         num_dict = phone_book[num_of_abonent-1]
+#         num_dict['name'] = input('Введите правильные Фамилию и Имя: ')
+#         phone_book[num_of_abonent-1] = num_dict
+#     elif num_of_change == 2:
+#         num_dict = phone_book[num_of_abonent-1]
+#         num_dict['phone'] = input('Введите новый номер телефона: ')
+#         phone_book[num_of_abonent-1] = num_dict
+#     elif num_of_change == 3:
+#         num_dict = phone_book[num_of_abonent-1]
+#         num_dict['comment'] = input('Введите новое место работы: ')
+#         phone_book[num_of_abonent-1] = num_dict
+#     new_phone_book = []
+#     for contact in phone_book:
+#         del contact['id']
 
-change_cont()
+#     new_contact_book = []
+#     for contact in phone_book:
+#         new_contact = ';'.join(f'{e}' for e in contact.values())
+#         new_contact_book.append(new_contact)
+#     new_contact_book = '\n'.join(new_contact_book)
+
+#     file = open('файл.txt', 'w', encoding='UTF-8')
+#     file.write(new_contact_book)
+#     file.close()
+                                
